@@ -32,7 +32,7 @@ public class ProductDTO implements Serializable{
 		this.name = entity.getName();
 		this.price = entity.getPrice();
 		this.description = entity.getDescription();
-		this.imageUri = entity.getDescription();
+		this.imageUri = entity.getImageUri();
 	}
 
 	public Long getId() {
