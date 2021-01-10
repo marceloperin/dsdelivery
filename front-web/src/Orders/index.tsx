@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
-import { createNoSubstitutionTemplateLiteral } from 'typescript';
 import { fetchProducts } from '../api';
+import OrderLocation from './OrderLocation';
 import ProductsList from './ProductList';
 import StepsHeader from './StepsHeader';
 import './styles.css';
@@ -10,8 +10,6 @@ import { Product } from './types';
 function Orders() {
 
     const [products, setProducts] = useState<Product[]>([]);
-
-    console.table(products);
 
     useEffect(() => {
         fetchProducts()
@@ -23,6 +21,7 @@ function Orders() {
         <div className="orders-container">
             <StepsHeader />
             <ProductsList products={products} />
+            <OrderLocation />
         </div>
     )
 }
