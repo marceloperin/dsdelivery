@@ -1,12 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
 function Home() {
+
+  const handleOnPress = () => {
+    console.log('pressed!')
+  }
+
   return (
-    <View style={styles.container}>
-      <Image source={require('../assets/deliveryman.png')} />
-      <Text>Home</Text>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Image source={require('../assets/deliveryman.png')} />
+        <Text style={styles.title}>Acompanhe os pedidos e entregue no prazo!</Text>
+        <Text style={styles.subTitle}>
+            Receba todos os pedidos do seu {'\n'}
+            restaurante na palma da sua mão
+        </Text>
+      </View>
+      <View style={styles.footer}>
+        <RectButton style={styles.button} onPress={handleOnPress}>
+          <Text  style={styles.buttonText}>VER PEDIDOS</Text>
+        </RectButton>
+      </View>
+    </>
   );
 }
 
@@ -17,7 +34,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#263238',
-    fontSize: 26,
+    fontSize: 28,
     lineHeight: 35,
     fontWeight: 'bold',
     marginTop: 31,
@@ -31,7 +48,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   footer: {
-    marginTop: '5%',
+    marginTop: '20%',
     alignItems: 'center'
   },
   button: {
